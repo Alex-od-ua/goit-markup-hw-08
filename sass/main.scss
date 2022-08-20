@@ -1,0 +1,20 @@
+@import './utils/vars';
+@import './utils/global';
+@import './utils/placeholders';
+@import './utils/mixin';
+@import './components/container';
+
+@import './components/logo-head';
+@import './components/logo-footer';
+@import './components/modal';
+@import './components/backdrop';
+
+@import './layout/head';
+@import './layout/footer';
+@import './layout/main-hero';
+@import './layout/main-skill';
+@import './layout/main-work';
+@import './layout/main-team';
+@import './layout/main-clients';
+@import './layout/portfolio-buttons';
+@import './layout/portfolio-projects';

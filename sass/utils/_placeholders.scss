@@ -1,0 +1,34 @@
+// @extend
+%flex-element {
+  display: flex;
+  align-items: center;
+}
+
+%list-style {
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-style {
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+.decor {
+  text-decoration: none;
+}
+
+.hover-style:hover,
+.hover-style:focus {
+  color: $accent-color;
+  text-decoration: none;
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
