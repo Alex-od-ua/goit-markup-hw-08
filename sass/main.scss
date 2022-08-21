@@ -1,5 +1,6 @@
-@import './utils/vars';
 @import './utils/global';
+@import './utils/vars';
+
 @import './utils/placeholders';
 @import './utils/mixin';
 @import './components/container';
@@ -8,6 +9,8 @@
 @import './components/logo-footer';
 @import './components/modal';
 @import './components/backdrop';
+
+// @import './layout/test_1';
 
 @import './layout/head';
 @import './layout/footer';

@@ -1,7 +1,17 @@
+.page-header__wrapper {
+  display: flex;
+
+  background-color: $main-background-color;
+}
+
+.logo {
+  margin: 16px 0 16px 0;
+}
+
 .overlay {
   background: #2f303a;
   max-width: 1600px;
-  // min-height: 600px;
+  min-height: 600px;
   margin-left: auto;
   margin-right: auto;
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
@@ -60,4 +70,47 @@
   padding: 10px 24px;
   border: 1px solid transparent;
   background-color: #2196f3;
+}
+
+.skill-section__wrapper {
+  @extend %flex-element;
+  justify-content: center;
+  height: 120px;
+  background: #f5f4fa;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+.skill-section__item {
+  width: 450px;
+  //   flex-wrap: wrap;
+
+  //   &:not(:last-child) {
+  //     margin-right: 30px;
+  //   }
+}
+
+.skill-section__list {
+  //   display: flex;
+  @extend %list-style;
+}
+
+.skill-section__title {
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: $primary-text-color;
+  margin-bottom: 10px;
+}
+
+.skill-section__text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: $second-text-color;
 }
