@@ -1,7 +1,7 @@
 .overlay {
   background: #2f303a;
   max-width: 1600px;
-  // min-height: 600px;
+  min-height: 600px;
   margin-left: auto;
   margin-right: auto;
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
@@ -26,8 +26,13 @@
 
 .hero-section {
   padding-top: 118px;
-  padding-bottom: 198px;
+  padding-bottom: 118px;
   text-align: center;
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
 }
 
 .hero-section__title {
@@ -43,6 +48,11 @@
   color: $white-text-color;
 
   margin-bottom: 30px;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 44px;
+    line-height: 60px;
+  }
 }
 
 .hero-section__button {

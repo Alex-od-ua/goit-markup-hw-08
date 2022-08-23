@@ -1,3 +1,4 @@
+@import './base/reset';
 @import './utils/global';
 @import './utils/vars';
 
@@ -12,12 +13,12 @@
 
 // @import './layout/test_1';
 
-@import './layout/head';
-@import './layout/footer';
-@import './layout/main-hero';
-@import './layout/main-skill';
-@import './layout/main-work';
-@import './layout/main-team';
-@import './layout/main-clients';
-@import './layout/portfolio-buttons';
-@import './layout/portfolio-projects';
+@import './layout/head_old';
+@import './layout/footer_old';
+@import './layout/main-hero_old';
+@import './layout/main-skill_old';
+@import './layout/main-work_old';
+@import './layout/main-team_old';
+@import './layout/main-clients_old';
+@import './layout/portfolio-buttons_old';
+@import './layout/portfolio-projects_old';
