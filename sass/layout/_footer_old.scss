@@ -1,18 +1,50 @@
 .footer-section {
   background-color: $footer-background-color;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  text-align: center;
+
+  @media screen and (min-width: 1200px) {
+    text-align: left;
+    padding: 60px 0 60px 0;
+  }
 }
 
 .footer-section .container {
-  display: flex;
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    align-items: baseline;
+  }
+}
+
+.footer-wrapper {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    gap: 165px;
+    margin-bottom: 60px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    gap: 70px;
+    margin-right: 93px;
+    margin-bottom: 0;
+    align-items: baseline;
+  }
+}
+
+.footer-section__item {
+  @media screen and (max-width: 768px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  width: 231px;
 }
 
 .footer-adress {
   margin-top: 20px;
 
-  &__item {
-    margin-top: 9px;
+  &__item:not(:last-child) {
+    margin-bottom: 8px;
   }
 
   &__link {
@@ -53,10 +85,15 @@
 }
 
 .footer-soclink {
-  margin-left: 70px;
+  // align-items: center;
+  padding: 60px 0;
 
   &__icon {
     fill: #ffffff;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 0;
   }
 }
 
@@ -67,12 +104,13 @@
   line-height: 16px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  margin-top: 12px;
+  // margin-top: 12px;
   color: $white-text-color;
 }
 
 .footer-soclink__list {
   display: flex;
+  justify-content: center;
   margin-top: 20px;
   margin-bottom: 0px;
   padding: 0px;
@@ -97,12 +135,14 @@
 }
 
 .subscribe-form {
-  display: flex;
-  margin-left: auto;
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    // margin-left: auto;
+  }
 
   &__label {
     display: block;
-    margin-top: 12px;
+    // margin-top: 12px;
     margin-bottom: 20px;
 
     font-style: 400;
@@ -116,7 +156,7 @@
   }
 
   &__input {
-    width: 358px;
+    width: 100%;
     height: 50px;
 
     font-style: 400;
@@ -130,10 +170,29 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
+
+    @media screen and (min-width: 768px) {
+      width: 450px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      width: 358px;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    @media screen and (min-width: 1200px) {
+      margin-top: 35px;
+      margin-left: 12px;
+    }
   }
 }
 
-.subscribe-form__item input::placeholder {
+.subscribe-form__input::placeholder {
   padding-left: 16px;
 
   font-style: 400;
@@ -151,8 +210,6 @@
   justify-content: center;
   width: 200px;
   height: 50px;
-  margin-top: 48px;
-  margin-left: 12px;
   padding: 0;
   gap: 10px;
 

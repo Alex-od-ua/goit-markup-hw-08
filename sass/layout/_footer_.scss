@@ -1,27 +1,23 @@
 .footer-section {
   background-color: $footer-background-color;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
-.footer-logo {
+.footer-section .container {
   display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
 }
+
 .footer-adress {
   margin-top: 20px;
 
-  &__item + &__item {
-    margin-top: 8px;
+  &__item {
+    margin-top: 9px;
   }
 
   &__link {
     text-decoration: none;
   }
-}
-
-.footer-adress__item {
-  display: flex;
-  justify-content: center;
 }
 
 .footer-adress__nav {
@@ -57,9 +53,7 @@
 }
 
 .footer-soclink {
-  //   margin-left: 70px;
-  margin-top: 60px;
-  margin-bottom: 60px;
+  margin-left: 70px;
 
   &__icon {
     fill: #ffffff;
@@ -71,15 +65,14 @@
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
-  text-align: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  margin-top: 12px;
   color: $white-text-color;
 }
 
 .footer-soclink__list {
   display: flex;
-  justify-content: center;
   margin-top: 20px;
   margin-bottom: 0px;
   padding: 0px;
@@ -104,13 +97,12 @@
 }
 
 .subscribe-form {
-  //   display: flex;
-  //   margin-left: auto;
+  display: flex;
+  margin-left: auto;
 
   &__label {
     display: block;
-    text-align: center;
-    // margin-top: 12px;
+    margin-top: 12px;
     margin-bottom: 20px;
 
     font-style: 400;
@@ -124,7 +116,7 @@
   }
 
   &__input {
-    width: 100%;
+    width: 358px;
     height: 50px;
 
     font-style: 400;
@@ -141,7 +133,7 @@
   }
 }
 
-.subscribe-form__input::placeholder {
+.subscribe-form__item input::placeholder {
   padding-left: 16px;
 
   font-style: 400;
@@ -159,11 +151,10 @@
   justify-content: center;
   width: 200px;
   height: 50px;
-  margin: 20px auto 0 auto;
-
-  //   margin-left: 12px;
+  margin-top: 48px;
+  margin-left: 12px;
   padding: 0;
-  //   gap: 10px;
+  gap: 10px;
 
   font-style: 400;
   font-weight: 700;

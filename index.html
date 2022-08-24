@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Главнвя</title>
+    <title>Главная</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,7 +27,7 @@
     <header class="page-header">
       <div class="container page-header__wrapper">
         <a class="logo decor" href="./index.html"> <span class="logo__accent">Web</span>Studio</a>
-        <!-- <nav class="site-nav">
+        <nav class="site-nav">
           <ul class="list-style site-nav__list">
             <li class="site-nav__item">
               <a class="site-nav__link current" href="./index.html">Студия</a>
@@ -39,9 +39,9 @@
               <a class="site-nav__link" href="">Контакты</a>
             </li>
           </ul>
-        </nav> -->
+        </nav>
 
-        <!-- <ul class="list-style contacts">
+        <ul class="list-style contacts">
           <li class="contacts__list">
             <a class="contacts__link" href="mailto:info@devstudio.com">
               <svg class="contacts__icon" width="16" height="12">
@@ -58,15 +58,15 @@
               +38 096 111 11 11</a
             >
           </li>
-        </ul> -->
+        </ul>
       </div>
     </header>
 
     <!------------ Основной контент ------------>
 
     <main>
-      <section class="hero-section overlay">
-        <div class="">
+      <section class="overlay">
+        <div class="container hero-section">
           <h1 class="hero-section__title">Ефективні рішення для вашого бізнесу</h1>
           <button data-modal-open type="button" class="hero-section__button">
             Замовити послугу
@@ -130,7 +130,7 @@
 
       <!------------ work-section ------------>
 
-      <!-- <section class="work-section section">
+      <section class="work-section section">
         <div class="container">
           <h2 class="work-section__title">Чем мы занимаемся</h2>
           <ul class="list-style">
@@ -162,7 +162,7 @@
             </li>
           </ul>
         </div>
-      </section> -->
+      </section>
 
       <!------------ team-section ------------>
 
@@ -409,65 +409,67 @@
 
     <!------------ Футер ------------>
 
-    <!-- <footer class="section footer-section">
+    <footer class="section footer-section">
       <div class="container">
         <div class="footer-wrapper">
-          <a class="footer-logo" href="./index.html"
-            ><span class="footer-logo__accent">Web</span>Studio</a
-          >
-          <address class="footer-adress">
-            <ul class="list-style">
-              <li class="footer-adress__item">
-                <a class="footer-adress__link" href="https://bit.ly/3pXMvUd"
-                  ><span class="footer-adress__nav">г. Киев, пр-т Леси Украинки, 26</span></a
-                >
+          <div class="footer-section__item">
+            <a class="footer-logo" href="./index.html"
+              ><span class="footer-logo__accent">Web</span>Studio</a
+            >
+            <address class="footer-adress">
+              <ul class="list-style footer-adress__list">
+                <li class="footer-adress__item">
+                  <a class="footer-adress__link" href="https://bit.ly/3pXMvUd"
+                    ><span class="footer-adress__nav">м. Київ, пр-т Лесі Українки, 26</span></a
+                  >
+                </li>
+                <li class="footer-adress__item">
+                  <a class="footer-adress__link" href="mailto:info@example.com"
+                    ><span class="footer-adress__contacts">info@example.com</span></a
+                  >
+                </li>
+                <li class="footer-adress__item">
+                  <a class="footer-adress__link" href="tel:+380991111111"
+                    ><span class="footer-adress__contacts">+38 099 111 11 11</span></a
+                  >
+                </li>
+              </ul>
+            </address>
+          </div>
+
+          <div class="footer-soclink">
+            <h2 class="footer-soclink__text">приєднуйтесь</h2>
+            <ul class="footer-soclink__list">
+              <li class="footer-soclink__item">
+                <a class="footer-soclink__link" href="#"
+                  ><svg class="footer-soclink__icon" width="20" height="20">
+                    <use href="./images/symbol-defs.svg#icon-instagram"></use>
+                  </svg>
+                </a>
               </li>
-              <li class="footer-adress__item">
-                <a class="footer-adress__link" href="mailto:info@example.com"
-                  ><span class="footer-adress__contacts">info@example.com</span></a
-                >
+              <li class="footer-soclink__item">
+                <a class="footer-soclink__link" href="#"
+                  ><svg class="footer-soclink__icon" width="20" height="20">
+                    <use href="./images/symbol-defs.svg#icon-twitter"></use>
+                  </svg>
+                </a>
               </li>
-              <li class="footer-adress__item">
-                <a class="footer-adress__link" href="tel:+380991111111"
-                  ><span class="footer-adress__contacts">+38 099 111 11 11</span></a
-                >
+              <li class="footer-soclink__item">
+                <a class="footer-soclink__link" href="#"
+                  ><svg class="footer-soclink__icon" width="20" height="20">
+                    <use href="./images/symbol-defs.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer-soclink__item">
+                <a class="footer-soclink__link" href="#"
+                  ><svg class="footer-soclink__icon" width="20" height="20">
+                    <use href="./images/symbol-defs.svg#icon-linkedin"></use>
+                  </svg>
+                </a>
               </li>
             </ul>
-          </address>
-        </div>
-
-        <div class="footer-soclink">
-          <h2 class="footer-soclink__text">присоединяйтесь</h2>
-          <ul class="footer-soclink__list">
-            <li class="footer-soclink__item">
-              <a class="footer-soclink__link" href="#"
-                ><svg class="footer-soclink__icon" width="20" height="20">
-                  <use href="./images/symbol-defs.svg#icon-instagram"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="footer-soclink__item">
-              <a class="footer-soclink__link" href="#"
-                ><svg class="footer-soclink__icon" width="20" height="20">
-                  <use href="./images/symbol-defs.svg#icon-twitter"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="footer-soclink__item">
-              <a class="footer-soclink__link" href="#"
-                ><svg class="footer-soclink__icon" width="20" height="20">
-                  <use href="./images/symbol-defs.svg#icon-facebook"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="footer-soclink__item">
-              <a class="footer-soclink__link" href="#"
-                ><svg class="footer-soclink__icon" width="20" height="20">
-                  <use href="./images/symbol-defs.svg#icon-linkedin"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
+          </div>
         </div>
         <form class="subscribe-form">
           <div class="subscribe-form__item">
@@ -483,7 +485,7 @@
               placeholder="E-mail"
             />
           </div>
-          <div>
+          <div class="subscribe-form__btn">
             <button class="subscribe-btn" type="submit">
               Підписатися
               <svg width="24" height="24">
@@ -493,11 +495,11 @@
           </div>
         </form>
       </div>
-    </footer> -->
+    </footer>
 
     <!------------ modal ------------>
 
-    <div class="backdrop is-hidden" data-modal>
+    <!-- <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button data-modal-close type="button" class="modal__btn">
           <svg class="modal__icon" width="30" height="30">
@@ -561,7 +563,7 @@
           <button disabled class="submit-btn" type="submit">Відправити</button>
         </form>
       </div>
-    </div>
+    </div> -->
     <script src="./js/modal.js"></script>
   </body>
 </html>
