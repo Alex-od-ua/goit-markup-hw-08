@@ -59,6 +59,54 @@
             >
           </li>
         </ul>
+
+        <!---------- mobile-menu ---------->
+
+        <div>
+          <button type="button" class="menu-button__open">
+            <svg class="button__icon" width="40" height="40">
+              <use href="./images/symbol-defs.svg#icon-menu-open"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="mobile-menu">
+          <button type="button" class="menu-button__close">
+            <svg class="menu-button__icon" width="40" height="40">
+              <use href="./images/symbol-defs.svg#icon-menu-close"></use>
+            </svg>
+          </button>
+          <nav class="mobile-nav">
+            <ul class="list-style mobile-nav__list">
+              <li class="mobile-nav__item">
+                <a class="mobile-nav__link" href="./index.html">Студия</a>
+              </li>
+              <li class="mobile-nav__item">
+                <a class="mobile-nav__link" href="./portfolio.html">Портфолио</a>
+              </li>
+              <li class="mobile-nav__item">
+                <a class="mobile-nav__link" href="">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+
+          <ul class="list-style mobile-contacts">
+            <li class="mobile-contacts__list">
+              <a class="mobile-contacts__tel" href="tel:+380961111111"> +38 096 111 11 11</a>
+            </li>
+
+            <li class="mobile-contacts__list">
+              <a class="mobile-contacts__link" href="mailto:info@devstudio.com">
+                info@devstudio.com</a
+              >
+            </li>
+          </ul>
+          <ul class="mobile-soc">
+            <li class="mobile-soc__item">Instagram</li>
+            <li class="mobile-soc__item">Twitter</li>
+            <li class="mobile-soc__item">Facebook</li>
+            <li class="mobile-soc__item">LinkedIn</li>
+          </ul>
+        </div>
       </div>
     </header>
 
@@ -499,7 +547,7 @@
 
     <!------------ modal ------------>
 
-    <!-- <div class="backdrop is-hidden" data-modal>
+    <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button data-modal-close type="button" class="modal__btn">
           <svg class="modal__icon" width="30" height="30">
@@ -563,7 +611,7 @@
           <button disabled class="submit-btn" type="submit">Відправити</button>
         </form>
       </div>
-    </div> -->
+    </div>
     <script src="./js/modal.js"></script>
   </body>
 </html>
