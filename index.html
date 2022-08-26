@@ -69,43 +69,56 @@
             </svg>
           </button>
         </div>
-        <div class="mobile-menu">
-          <button type="button" class="menu-button__close">
-            <svg class="menu-button__icon" width="40" height="40">
-              <use href="./images/symbol-defs.svg#icon-menu-close"></use>
-            </svg>
-          </button>
-          <nav class="mobile-nav">
-            <ul class="list-style mobile-nav__list">
-              <li class="mobile-nav__item">
-                <a class="mobile-nav__link" href="./index.html">Студия</a>
-              </li>
-              <li class="mobile-nav__item">
-                <a class="mobile-nav__link" href="./portfolio.html">Портфолио</a>
-              </li>
-              <li class="mobile-nav__item">
-                <a class="mobile-nav__link" href="">Контакты</a>
-              </li>
-            </ul>
-          </nav>
+        <div class="mobile-menu is-hidden">
+          <div class="container">
+            <div class="mobile-menu__top">
+              <button type="button" class="menu-button__close">
+                <svg class="menu-button__icon" width="40" height="40">
+                  <use href="./images/symbol-defs.svg#icon-menu-close"></use>
+                </svg>
+              </button>
+              <nav class="mobile-nav">
+                <ul class="list-style mobile-nav__list">
+                  <li class="mobile-nav__item">
+                    <a class="mobile-nav__link mob-current" href="./index.html">Студия</a>
+                  </li>
+                  <li class="mobile-nav__item">
+                    <a class="mobile-nav__link" href="./portfolio.html">Портфолио</a>
+                  </li>
+                  <li class="mobile-nav__item">
+                    <a class="mobile-nav__link" href="">Контакты</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="mobile-menu__bottom">
+              <ul class="list-style mobile-contacts">
+                <li class="mobile-contacts__list">
+                  <a class="mobile-contacts__tel" href="tel:+380961111111"> +38 096 111 11 11</a>
+                </li>
 
-          <ul class="list-style mobile-contacts">
-            <li class="mobile-contacts__list">
-              <a class="mobile-contacts__tel" href="tel:+380961111111"> +38 096 111 11 11</a>
-            </li>
-
-            <li class="mobile-contacts__list">
-              <a class="mobile-contacts__link" href="mailto:info@devstudio.com">
-                info@devstudio.com</a
-              >
-            </li>
-          </ul>
-          <ul class="mobile-soc">
-            <li class="mobile-soc__item">Instagram</li>
-            <li class="mobile-soc__item">Twitter</li>
-            <li class="mobile-soc__item">Facebook</li>
-            <li class="mobile-soc__item">LinkedIn</li>
-          </ul>
+                <li class="mobile-contacts__list">
+                  <a class="mobile-contacts__link" href="mailto:info@devstudio.com">
+                    info@devstudio.com</a
+                  >
+                </li>
+              </ul>
+              <ul class="mobile-soc">
+                <li class="mobile-soc__item">
+                  <a class="mobile-soc__link" href="">Instagram</a>
+                </li>
+                <li class="mobile-soc__item">
+                  <a class="mobile-soc__link" href="">Twitter</a>
+                </li>
+                <li class="mobile-soc__item">
+                  <a class="mobile-soc__link" href="">Facebook</a>
+                </li>
+                <li class="mobile-soc__item">
+                  <a class="mobile-soc__link" href="">LinkedIn</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </header>
@@ -549,8 +562,8 @@
 
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
-        <button data-modal-close type="button" class="modal__btn">
-          <svg class="modal__icon" width="30" height="30">
+        <button type="button" class="modal__btn" data-modal-close>
+          <svg class="button__icon" width="30" height="30">
             <use href="./images/symbol-defs.svg#icon-close"></use>
           </svg>
         </button>
@@ -603,8 +616,7 @@
               <svg class="modal-checkbox__icon--none" width="16" height="15">
                 <use href="./images/symbol-defs.svg#icon-Vector"></use>
               </svg>
-
-              Погоджуюся з розсилкою та приймаю
+              <span class="modal-checkbox__text">Погоджуюся з розсилкою та приймаю</span>
               <a class="modal-checkbox__link" href="">Умови договору</a>
             </label>
           </div>
@@ -613,5 +625,6 @@
       </div>
     </div>
     <script src="./js/modal.js"></script>
+    <script src="./js/menu.js"></script>
   </body>
 </html>

@@ -2,14 +2,15 @@
 @import './utils/global';
 @import './utils/vars';
 
+@import './utils/hidden';
 @import './utils/placeholders';
 @import './utils/mixin';
 @import './components/container';
 
+@import './components/backdrop';
 @import './components/logo-head';
 @import './components/logo-footer';
 @import './components/modal';
-@import './components/backdrop';
 
 // @import './layout/test_1';
 

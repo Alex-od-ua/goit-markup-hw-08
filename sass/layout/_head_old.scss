@@ -124,11 +124,32 @@
 // <!---------- mobile-menu ---------->
 
 .mobile-menu {
-  padding-left: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: #ffffff;
+  z-index: 2;
+  > .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    overflow: auto;
+    padding: 48px 40px 48px 40px;
+  }
+
+  @media screen and (min-width: 767px) {
+    display: none;
+  }
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.menu-button__open,
-.menu-button__close {
+.menu-button__open {
   display: flex;
   align-items: center;
   padding: 0;
@@ -141,16 +162,25 @@
 }
 
 .menu-button__close {
-  margin-left: auto;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+    fill: currentColor;
+  }
 }
 
-.mobile-menu {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #ffffff;
+.menu-button__close {
+  margin-left: auto;
 }
 
 .mobile-nav__item:not(:last-child) {
@@ -166,12 +196,10 @@
   text-decoration: none;
 
   color: $primary-text-color;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  &:hover,
-  &:focus {
-    color: $accent-color;
-  }
+.mob-current {
+  color: $accent-color;
 }
 
 .mobile-contacts__tel {
@@ -184,6 +212,10 @@
 
   color: #2196f3;
   text-decoration: none;
+
+  @media screen and (max-width: 380px) {
+    font-size: 24px;
+  }
 }
 
 .mobile-contacts {
@@ -216,12 +248,18 @@
 
 .mobile-soc {
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
   padding: 0;
   gap: 10px;
 }
 
-.mobile-soc__item {
+.mobile-soc__item:not(:last-child) {
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+  padding-right: 10px;
+}
+
+.mobile-soc__link {
   font-family: 'Roboto';
   font-style: 400;
   font-weight: 500;
@@ -230,10 +268,6 @@
 
   letter-spacing: 0.02em;
   color: #2196f3;
-}
 
-.mobile-soc__item:not(:last-child) {
-  border-right: 1px solid rgba(33, 33, 33, 0.2);
-
-  padding-right: 10px;
+  text-decoration: none;
 }

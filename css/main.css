@@ -24,6 +24,16 @@ p {
   margin: 0;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .clients-section__link, .social-link__item, .social-link, .skill-section__wrapper, .subscribe-btn, .footer-soclink__link, .contacts__link, .site-nav, .page-header__wrapper, .modal-checkbox__label, .modal-checkbox {
   display: flex;
   align-items: center;
@@ -88,6 +98,27 @@ p {
   }
 }
 
+.backdrop {
+  z-index: 9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.3);
+}
+
 .logo {
   font-family: "Raleway";
   font-style: 400;
@@ -135,8 +166,8 @@ p {
   position: absolute;
   top: 50%;
   left: 50%;
-  min-height: 581px;
-  width: 528px;
+  width: 450px;
+  min-height: 609px;
   padding: 40px;
   background-color: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -150,16 +181,22 @@ p {
 .modal__icon:hover {
   fill: #2196f3;
 }
+@media screen and (min-width: 1200px) {
+  .modal {
+    width: 528px;
+    min-height: 581px;
+  }
+}
 
 .modal__btn {
   position: absolute;
   top: 8px;
-  right: 58px;
+  right: 8px;
+  align-items: center;
   padding: 0;
-  margin: 0;
-  border: 0;
+  border: none;
+  background-color: transparent;
   cursor: pointer;
-  background: #ffffff;
 }
 
 .modal__text {
@@ -226,7 +263,7 @@ p {
   padding: 12px 16px;
   margin-top: 4px;
   margin-bottom: 20px;
-  width: 448px;
+  width: 370px;
   min-height: 120px;
   resize: none;
   outline: none;
@@ -237,6 +274,11 @@ p {
 }
 .modal__comment:focus {
   border-color: #2196f3;
+}
+@media screen and (min-width: 1200px) {
+  .modal__comment {
+    width: 448px;
+  }
 }
 
 .modal-checkbox {
@@ -265,12 +307,21 @@ p {
 
 .modal-checkbox__label {
   justify-content: center;
+}
+
+.modal-checkbox__text {
   font-style: 400;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 14px;
   letter-spacing: 0.03em;
   color: #757575;
+}
+@media screen and (min-width: 1200px) {
+  .modal-checkbox__text {
+    font-size: 14px;
+    line-height: 24px;
+  }
 }
 
 .modal-checkbox__input {
@@ -286,12 +337,18 @@ p {
   margin-left: 2px;
   font-style: 400;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 14px;
   letter-spacing: 0.03em;
   color: #2196f3;
   text-decoration: none;
   border-bottom: 1px solid #2196f3;
+}
+@media screen and (min-width: 1200px) {
+  .modal-checkbox__link {
+    font-size: 14px;
+    line-height: 24px;
+  }
 }
 
 .modal-checkbox__icon {
@@ -310,27 +367,6 @@ p {
 }
 .modal-checkbox__input:checked ~ .modal-checkbox__icon--none {
   fill: #2196f3;
-}
-
-.backdrop {
-  z-index: 9;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-  background-color: rgba(0, 0, 0, 0.2);
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.backdrop.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(1.3);
 }
 
 .page-header {
@@ -441,11 +477,30 @@ p {
 }
 
 .mobile-menu {
-  padding-left: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+  z-index: 2;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-menu > .container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  overflow: auto;
+  padding: 48px 40px 48px 40px;
+}
+@media screen and (min-width: 767px) {
+  .mobile-menu {
+    display: none;
+  }
 }
 
-.menu-button__open,
-.menu-button__close {
+.menu-button__open {
   display: flex;
   align-items: center;
   padding: 0;
@@ -453,23 +508,28 @@ p {
   background-color: transparent;
 }
 @media screen and (min-width: 768px) {
-  .menu-button__open,
-.menu-button__close {
+  .menu-button__open {
     display: none;
   }
 }
 
 .menu-button__close {
-  margin-left: auto;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.menu-button__close:hover, .menu-button__close:focus {
+  color: #2196f3;
+  fill: currentColor;
 }
 
-.mobile-menu {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #ffffff;
+.menu-button__close {
+  margin-left: auto;
 }
 
 .mobile-nav__item:not(:last-child) {
@@ -484,9 +544,9 @@ p {
   letter-spacing: 0.02em;
   text-decoration: none;
   color: #212121;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.mobile-nav__link:hover, .mobile-nav__link:focus {
+
+.mob-current {
   color: #2196f3;
 }
 
@@ -499,6 +559,11 @@ p {
   letter-spacing: 0.02em;
   color: #2196f3;
   text-decoration: none;
+}
+@media screen and (max-width: 380px) {
+  .mobile-contacts__tel {
+    font-size: 24px;
+  }
 }
 
 .mobile-contacts {
@@ -525,12 +590,18 @@ p {
 
 .mobile-soc {
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
   padding: 0;
   gap: 10px;
 }
 
-.mobile-soc__item {
+.mobile-soc__item:not(:last-child) {
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+  padding-right: 10px;
+}
+
+.mobile-soc__link {
   font-family: "Roboto";
   font-style: 400;
   font-weight: 500;
@@ -538,11 +609,7 @@ p {
   line-height: 22px;
   letter-spacing: 0.02em;
   color: #2196f3;
-}
-
-.mobile-soc__item:not(:last-child) {
-  border-right: 1px solid rgba(33, 33, 33, 0.2);
-  padding-right: 10px;
+  text-decoration: none;
 }
 
 .footer-section {
@@ -583,7 +650,7 @@ p {
 .footer-section__item {
   width: 231px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .footer-section__item {
     margin-left: auto;
     margin-right: auto;
