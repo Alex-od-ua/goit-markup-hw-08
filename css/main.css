@@ -34,7 +34,7 @@ p {
   pointer-events: none;
 }
 
-.clients-section__link, .social-link__item, .social-link, .skill-section__wrapper, .subscribe-btn, .footer-soclink__link, .contacts__link, .site-nav, .page-header__wrapper, .modal-checkbox__label, .modal-checkbox {
+.clients-section__link, .social-link__item, .social-link, .skill-section__wrapper, .subscribe-btn, .footer-soclink__link, .contacts__link, .site-nav, .page-header__wrapper, .modal-checkbox {
   display: flex;
   align-items: center;
 }
@@ -166,7 +166,8 @@ p {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 450px;
+  width: 100%;
+  max-width: 450px;
   min-height: 609px;
   padding: 40px;
   background-color: #ffffff;
@@ -181,10 +182,17 @@ p {
 .modal__icon:hover {
   fill: #2196f3;
 }
+@media screen and (min-width: 480px) {
+  .modal {
+    width: 450px;
+    min-height: 609px;
+  }
+}
 @media screen and (min-width: 1200px) {
   .modal {
-    width: 528px;
-    min-height: 581px;
+    max-width: 528px;
+    width: 100%;
+    height: 581px;
   }
 }
 
@@ -197,6 +205,14 @@ p {
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+
+.button__icon {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.button__icon:hover, .button__icon:focus {
+  color: #2196f3;
+  fill: currentColor;
 }
 
 .modal__text {
@@ -263,7 +279,7 @@ p {
   padding: 12px 16px;
   margin-top: 4px;
   margin-bottom: 20px;
-  width: 370px;
+  width: 100%;
   min-height: 120px;
   resize: none;
   outline: none;
@@ -305,8 +321,9 @@ p {
   cursor: pointer;
 }
 
-.modal-checkbox__label {
-  justify-content: center;
+.modal-checkbox {
+  position: absolute;
+  padding-left: 24px;
 }
 
 .modal-checkbox__text {
@@ -325,7 +342,6 @@ p {
 }
 
 .modal-checkbox__input {
-  position: absolute;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -354,19 +370,34 @@ p {
 .modal-checkbox__icon {
   position: absolute;
   top: 2px;
-  left: 10px;
+  left: 4px;
   fill: transparent;
 }
 .modal-checkbox__input:checked + .modal-checkbox__icon {
   background-image: url(../images/symbol-defs.svg/#icon-icon-check);
   fill: #2196f3;
 }
+@media screen and (min-width: 1200px) {
+  .modal-checkbox__icon {
+    top: 4px;
+    left: 4px;
+  }
+}
 
 .modal-checkbox__icon--none {
+  position: absolute;
+  top: 2px;
+  left: 4px;
   margin-top: 0px;
 }
 .modal-checkbox__input:checked ~ .modal-checkbox__icon--none {
   fill: #2196f3;
+}
+@media screen and (min-width: 1200px) {
+  .modal-checkbox__icon--none {
+    top: 4px;
+    left: 4px;
+  }
 }
 
 .page-header {
@@ -581,11 +612,6 @@ p {
   letter-spacing: 0.02em;
   color: #757575;
   text-decoration: none;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.mobile-contacts__link:hover, .mobile-contacts__link:focus {
-  color: #2196f3;
-  fill: currentColor;
 }
 
 .mobile-soc {
@@ -819,26 +845,44 @@ p {
 
 .overlay {
   background: #2f303a;
-  max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 250px) and (max-width: 767px) {
   .overlay {
-    height: 400px;
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-mob.jpg);
+    max-width: 480px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 250px) and (max-width: 767px) and (min-device-pixel-ratio: 2), screen and (min-width: 250px) and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 250px) and (max-width: 767px) and (min-resolution: 192dpi), screen and (min-width: 250px) and (max-width: 767px) and (min-resolution: 2dppx) {
   .overlay {
-    height: 400px;
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-mob-x2.jpg);
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .overlay {
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-tab.jpg);
+    width: 768px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (max-width: 1199px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (max-width: 1199px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (max-width: 1199px) and (min-resolution: 2dppx) {
+  .overlay {
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-tab-x2.jpg);
   }
 }
 @media screen and (min-width: 1200px) {
   .overlay {
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-img.jpg);
+    max-width: 1600px;
     height: 600px;
+  }
+}
+@media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
+  .overlay {
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-img-x2.jpg);
   }
 }
 
@@ -859,7 +903,6 @@ p {
   font-weight: 900;
   font-size: 26px;
   line-height: 42px;
-  text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #ffffff;
@@ -1063,10 +1106,6 @@ p {
   letter-spacing: 0.03em;
   color: #757575;
   margin: 10px 0 16px 0;
-}
-
-.team-section__image {
-  vertical-align: bottom;
 }
 
 .team-section__wrapper {
