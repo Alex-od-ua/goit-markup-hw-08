@@ -1,8 +1,8 @@
 .clients-section__title {
   font-style: 400;
   font-weight: 700;
-  font-size: 28px;
-  line-height: 33px;
+  font-size: 36px;
+  line-height: 1.16;
   text-align: center;
   letter-spacing: 0.03em;
 
@@ -12,13 +12,24 @@
 .clients-section__list {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 30px;
+  margin-top: 50px;
   gap: 30px;
+}
+
+.clients-section__item {
+  width: calc((100% - 30px) / 2);
+
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 60px) / 3);
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: calc((100% - 150px) / 6);
+  }
 }
 
 .clients-section__link {
   @extend %flex-element;
-  width: 210px;
   height: 92px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
@@ -37,5 +48,6 @@
 }
 
 .clients-section__icon {
+  max-width: 210px;
   fill: currentColor;
 }

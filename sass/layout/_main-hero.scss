@@ -1,27 +1,54 @@
 .overlay {
   background: #2f303a;
 
-  width: 1600px;
-  height: 600px;
   margin-left: auto;
   margin-right: auto;
-  // background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-  // url(../images/hero-img.jpg);
+
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 
-  @media screen and (min-width: 480px) {
-    width: 480px;
-    height: 400px;
+  @media screen and (min-width: 250px) and (max-width: 767px) {
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url(../images/hero-mob.jpg);
+    max-width: 480px;
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../images/hero-mob-x2.jpg);
+    }
   }
-  @media screen and (min-width: 768px) {
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url(../images/hero-tab.jpg);
     width: 768px;
-    height: 400px;
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../images/hero-tab-x2.jpg);
+    }
   }
   @media screen and (min-width: 1200px) {
-    width: 1600px;
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url(../images/hero-img.jpg);
+
+    max-width: 1600px;
     height: 600px;
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../images/hero-img-x2.jpg);
+    }
   }
 }
 
@@ -41,13 +68,10 @@
   font-weight: 900;
   font-size: 26px;
   line-height: 42px;
-
-  text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 
   color: $white-text-color;
-
   margin-bottom: 30px;
 
   @media screen and (min-width: 1200px) {
